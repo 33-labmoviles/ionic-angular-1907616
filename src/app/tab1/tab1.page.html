@@ -13,5 +13,11 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-card>
+    <ion-card-content *ngFor="let alumno of alumnos">
+      {{alumno}}
+    </ion-card-content>
+  </ion-card>
+
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
