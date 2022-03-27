@@ -11,16 +11,21 @@ export class Tab1Page {
 
     alumnos = [
      "Andres Briseno",
-     "Peter Parker",
      "Alejandro Cristerna",
+     "Peter Parker 1",
+     "Peter Parker 2",
+     "Peter Parker 3",
      "Tobey Maguire",
      "Andrew Garfield",
      "Tom Holland",
      "Zendaya",
-     "Jacob",
+     "Jacob Batalon",
      "Marisa Tomei",
      "Williem Dafoe",
      "Alfred Molina",
+     "Benedict Cumberbatch",
+     "Jaime Fox",
+     "Charlie Cox",
 
 
     ]

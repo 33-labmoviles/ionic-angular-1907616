@@ -1,10 +1,12 @@
+
 import { IonicModule } from '@ionic/angular';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-import { AlumnosComponent } from '../alumnos/alumnos.component';
+import { ListaComponentModule } from './../lista/lista.component.module';
+
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
@@ -14,7 +16,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    AlumnosComponent,
+    ListaComponentModule,
     Tab1PageRoutingModule
   ],
   declarations: [Tab1Page]
