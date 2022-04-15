@@ -1,3 +1,4 @@
+import { ListaDetalleComponentModule } from './../lista-detalle/lista-detalle.component.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
