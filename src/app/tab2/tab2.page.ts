@@ -1,93 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit{
 
-  constructor(){}
+  constructor(private http: HttpClient){}
+  ngOnInit(): void{
+    this.getlistas();
+  }
+  listas : any = [];
+
+  getlistas() {
+    return this.http.get('https://listas-5f864-default-rtdb.firebaseio.com/.json').subscribe(res => {
+   
+    this.listas = res;
+    console.log(res);
+    })
   
-  listas = [
-    {
-      "nombre": "Andres",
-      "apellido": "Briseno",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Alejandro",
-      "apellido": "Cristerna",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Peter",
-      "apellido": "Parker 1",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Peter",
-      "apellido": "Parker 2",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Peter",
-      "apellido": "Parker 3",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Tobey",
-      "apellido": "Maguire",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Andrew",
-      "apellido": "Garfield",
-      "matricula": "ABC123", 
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-      {
-      "nombre": "Tom",
-      "apellido": "Holland",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-     {
-      "nombre": "Willem",
-      "apellido": "Dafoe",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Alfred",
-      "apellido": "Molina",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Benedict",
-      "apellido": "Cumberbatch",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Jaime",
-      "apellido": "Foxx",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    },
-    {
-      "nombre": "Charlie",
-      "apellido": "Cox",
-      "matricula": "ABC123",
-      "imagen" : "https://vignette.wikia.nocookie.net/lossimpson/images/5/55/Desconocido.png/revision/latest?cb=20150614004847&path-prefix=es"
-    }
-  ];
-
+  }
 }
