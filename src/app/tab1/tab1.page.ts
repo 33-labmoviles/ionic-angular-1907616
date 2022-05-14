@@ -11,7 +11,6 @@ export class  Tab1Page implements OnChanges {
 
   //changes: SimpleChanges
   ngOnChanges(): void {
-    console.log("cambio la vista");
 }
 
     listas = [

@@ -16,11 +16,17 @@ export class Tab2Page implements OnInit{
   listas : any = [];
 
   getlistas() {
-    return this.http.get('https://listas-5f864-default-rtdb.firebaseio.com/.json').subscribe(res => {
+    return this.http.get('https://listas-5f864-default-rtdb.firebaseio.com/listas.json').subscribe(res => {
    
-    this.listas = res;
-    console.log(res);
+    const listaRes: any = res;
+
+    console.log(listaRes, "listaRes")
+    const listasArray = Object.keys(res).forEach((key:any) =>{
+
+      (this.listas).push(listaRes[key]);
+
+      console.log(this.listas, "listas");
     })
-  
+    });
   }
 }
