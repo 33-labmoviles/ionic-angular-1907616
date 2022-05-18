@@ -17,7 +17,7 @@ export class Tab2Page implements OnInit{
 
   getlistas() {
     return this.http.get('https://listas-5f864-default-rtdb.firebaseio.com/listas.json').subscribe(res => {
-   
+
     const listaRes: any = res;
 
     console.log(listaRes, "listaRes")

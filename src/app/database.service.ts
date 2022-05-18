@@ -13,7 +13,7 @@ export class DatabaseService {
     return this.http.post('https://listas-5f864-default-rtdb.firebaseio.com/listas.json', nuevaLista);
   }
 
-  detalleAlumno(matricula: string){
+  detalleLista(matricula: string){
     return this.http.get('https://listas-5f864-default-rtdb.firebaseio.com/listas/'+ matricula + '.json');
   }
 }

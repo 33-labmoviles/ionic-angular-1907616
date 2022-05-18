@@ -9,7 +9,6 @@ export class  Tab1Page implements OnChanges {
 
   constructor() {}
 
-  //changes: SimpleChanges
   ngOnChanges(): void {
 }
 
@@ -79,7 +78,7 @@ export class  Tab1Page implements OnChanges {
       "apellido": "Cox",
       "matricula": "ABC123"
     }
-    ];
+  ];
 
     @Input() nombre: string = "";
     @Input() apellido: string = "";
@@ -108,8 +107,7 @@ export class  Tab1Page implements OnChanges {
         return 0;
       });
     
-        console.log(this.listas); //Imprimir en consola el nuevo arreglo
+        console.log(this.listas); 
       }
   }
-  
 

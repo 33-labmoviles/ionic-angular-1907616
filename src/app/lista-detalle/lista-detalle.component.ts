@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
@@ -13,21 +14,21 @@ export class ListaDetalleComponent implements OnInit {
 
 
   constructor(
-    private ruta :ActivatedRoute,
+    private ruta: ActivatedRoute,
     private db: DatabaseService,
     public actionSheetC: ActionSheetController) {}
 
     ngOnInit() {
-      console.log(this.matricula)
-      this.obtenerDetalleLista(this.matricula);
+      console.log(this.id);
+      this.obtenerDetalleLista(this.id);
     }
 
-    listaDetalle: any={}
-    matricula: string = this.ruta.snapshot.params.matricula;
-   
-    obtenerDetalleLista(matricula: String): any{
-      this.db.detalleLista(matricula)
+    listaDetalle: any={};
+    // eslint-disable-next-line @typescript-eslint/member-ordering
+    id: string = this.ruta.snapshot.params.id;
 
+    obtenerDetalleLista(id: string): any{
+      this.db.detalleLista(id);
 
       return this.listaDetalle;
     }
@@ -78,7 +79,7 @@ export class ListaDetalleComponent implements OnInit {
         }]
       });
       await actionSheet.present();
-  
+
       const { role, data } = await actionSheet.onDidDismiss();
       console.log('onDidDismiss resolved with role and data', role, data);
     }

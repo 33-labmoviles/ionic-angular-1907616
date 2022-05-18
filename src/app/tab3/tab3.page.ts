@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
-import { DatabaseService } from './../database.service';
+import { DatabaseService} from './../database.service';
 
 import { Lista } from '../lista';
 
@@ -16,16 +16,15 @@ export class Tab3Page {
     private db: DatabaseService
   ) {}
 
-  nuevaLista : Lista;
+nuevaLista : Lista;
 
   nombre: string ="";
   apellido: string ="";
   matricula: string ="";
 
-  //modelo = new Lista( this.nombre, this.apellido, this.matricula);
 
   onSubmit(agregarLista: NgForm) {
-   
+    
     console.log("Submit");
 
     this.nuevaLista = {
@@ -34,9 +33,11 @@ export class Tab3Page {
       matricula: this.matricula
     }
 
-    this.db.agregarlista(this.nuevaLista).subscribe(res =>{
-      console.log("Se agrego correctamente")
+    this.db.agregarlista(this.nuevaLista).suscribe(res =>{
+      console.log("Se agrego a la lista correctamente")
     })
-    
+
+
+    }
   }
-}
+
