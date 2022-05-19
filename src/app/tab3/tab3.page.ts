@@ -16,7 +16,7 @@ export class Tab3Page {
     private db: DatabaseService
   ) {}
 
-nuevaLista : Lista;
+nuevaLista: Lista;
 
   nombre: string ="";
   apellido: string ="";
@@ -24,18 +24,18 @@ nuevaLista : Lista;
 
 
   onSubmit(agregarLista: NgForm) {
-    
-    console.log("Submit");
+
+    console.log('Submit');
 
     this.nuevaLista = {
       nombre: this.nombre,
       apellido: this.apellido,
       matricula: this.matricula
-    }
+    };
 
-    this.db.agregarlista(this.nuevaLista).suscribe(res =>{
-      console.log("Se agrego a la lista correctamente")
-    })
+    this.db.agregarlista(this.nuevaLista).subscribe(res =>{
+      console.log('Se agrego a la lista correctamente');
+    });
 
 
     }
